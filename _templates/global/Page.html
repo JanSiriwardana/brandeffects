@@ -10,8 +10,13 @@
 {% block content %}
 {% block body %}{% endblock %}
 
-<footer class="pt-5 text-right font-italic text-muted">
-Laboratory for Economic and Decision Research, University of East Anglia
+<footer>
+    <hr/>
+    <div class="text-right">
+        <p class="text-muted font-italic">Laboratory for Economic and Decision Research, University of East Anglia
+            <img src="{% static 'global/uea.png' %}" class="align-content-center ml-3" alt="UEA logo"/>
+        </p>
+    </div>
 </footer>
-{% endblock %}
+{% endblock content %}
 

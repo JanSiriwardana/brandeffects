@@ -18,7 +18,7 @@ Standard welcome pages for LEDR experiments
 
 
 class Constants(BaseConstants):
-    name_in_url = 'intro'
+    name_in_url = 'outro'
     players_per_group = None
     num_rounds = 1
 
