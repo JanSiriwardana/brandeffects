@@ -8,10 +8,10 @@ from otree.api import (
 )
 
 
-author = 'Prachi Hejib'
+author = 'LEDR team'
 
 doc = """
-Demographics Survey
+Standard LEDR demographics inventory
 """
 
 
