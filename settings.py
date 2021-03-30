@@ -8,6 +8,7 @@ SESSION_CONFIGS = [
         app_sequence=[
             'intro',
             'demographics',
+            'outro'
         ]
     ),
 ]

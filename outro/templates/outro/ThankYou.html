@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Thank you!
+{% endblock %}
+
+{% block body %}
+    <p>
+        Your total earnings for today's experiment are <b>{{ participant.payoff }}</b>.
+    </p>
+    <p>
+        Please wait at your station for further instructions from an experimenter.
+    </p>
+    <p>
+        Thank you for participating in today's experiment!  We hope to see you at another experiment at LEDR soon.
+    </p>
+
+{% endblock body %}
