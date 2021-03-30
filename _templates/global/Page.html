@@ -2,6 +2,54 @@
 {% load otree static %}
 
 {% block global_styles  %}
+<style>
+.otree-form-errors {
+    display: none;
+}
+
+/* Tooltip container, adapted from https://www.w3schools.com/css/css_tooltip.asp  */
+.ledr-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.ledr-tooltip .ledr-tooltiptext {
+  visibility: hidden;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+    width: 300px;
+    top: 100%;
+  left: 50%;
+  margin-left: -150px; /* Use half of the width to center the tooltip */
+
+}
+
+.ledr-tooltip .ledr-tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.ledr-tooltip:hover .ledr-tooltiptext {
+  visibility: visible;
+}
+
+</style>
 {% endblock %}
 
 {% block global_scripts  %}
