@@ -6,8 +6,11 @@ class Introduction(Page):
 
 
 class QuestionPage(Page):
-    template_name = "demographics/GeneralDemographics.html"
+    template_name = "global/Questions.html"
     form_model = 'player'
+
+    def vars_for_template(self):
+        return {'title': "A bit about you..."}
 
 
 class Page1(QuestionPage):
