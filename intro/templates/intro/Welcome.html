@@ -1,11 +1,10 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{% extends "ledr/SimplePage.html" %}
 
 {% block title %}
 Welcome
 {% endblock %}
 
-{% block content %}
+{% block pre_text %}
     <p>
     Welcome to today’s experiment and thanks for coming.
         This is an experiment in the economics of decision-making.
@@ -26,9 +25,4 @@ Welcome
         All decisions in today's experiment and any information you choose to give is
         recorded anonymously, and will only be used in the analysis of the data from this experiment.
     </p>
-
-    <div class="row justify-content-center">
-    {% next_button %}
-    </div>
-
-{% endblock content %}
+{% endblock pre_text %}

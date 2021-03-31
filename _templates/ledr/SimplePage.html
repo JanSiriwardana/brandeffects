@@ -5,8 +5,7 @@
 This template builds pages which contain one or more questions which participants answer,
 but no other content.
 This is used for collecting demographics, and also is suitable for comprehension
-questions.  It may also be suitable for certain very simple decision tasks, where the
-question label contians
+questions.
 
 This implements 'nice' server-side feedback: validation messages are displayed
 immediately following the input widget and formatted according to good design guidelines
@@ -29,6 +28,11 @@ button or other mechanism supplied by replacing the confirm_button block
 
 
 {% block content %}
+
+{% block pre_text %}
+{% endblock pre_text %}
+
+{% block form_content %}
 {% for field in form %}
     <div class="container border bg-light p-2 mt-2 mb-2">
         <div class="mb-3">
@@ -44,6 +48,10 @@ button or other mechanism supplied by replacing the confirm_button block
         </div>
     </div>
 {% endfor %}
+{% endblock form_content %}
+
+{% block post_text %}
+{% endblock post_text %}
 
 {% block confirm_button %}
 <div class="row justify-content-center">

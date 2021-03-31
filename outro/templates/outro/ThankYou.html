@@ -1,11 +1,10 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{% extends "ledr/SimplePage.html" %}
 
 {% block title %}
 Thank you!
 {% endblock %}
 
-{% block content %}
+{% block pre_text %}
     <p>
         Your total earnings for today's experiment are <b>{{ participant.payoff }}</b>.
     </p>
@@ -15,5 +14,11 @@ Thank you!
     <p>
         Thank you for participating in today's experiment!  We hope to see you at another experiment at LEDR soon.
     </p>
+{% endblock pre_text %}
 
-{% endblock content %}
+{% comment %}
+We suppress the confirmation/submission button because this is the final page...
+{% endcomment %}
+{% block confirm_button %}
+{% endblock %}
+

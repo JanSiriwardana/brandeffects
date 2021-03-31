@@ -1,11 +1,7 @@
-{% extends "global/Page.html" %}
+{% extends "ledr/SimplePage.html" %}
 {% load otree %}
 
-{% block title %}
-A bit about you...
-{% endblock %}
-
-{% block content %}
+{% block pre_text %}
     <p>
     For our study, it is helpful to know a bit more about our participants.
     Below we ask a few general questions about you and your background.
@@ -13,9 +9,5 @@ A bit about you...
     and will only be used in the analysis of the data from this experiment.
     </p>
 
-    <div class="row justify-content-center">
-    {% next_button %}
-    </div>
-
-{% endblock content %}
+{% endblock pre_text %}
 

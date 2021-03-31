@@ -2,7 +2,8 @@ from ._builtin import Page
 
 
 class Welcome(Page):
-    pass
+    def vars_for_template(self):
+        return {'button_text': "Next"}
 
 
 page_sequence = [

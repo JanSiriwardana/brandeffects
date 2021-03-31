@@ -2,12 +2,16 @@ from ._builtin import Page
 
 
 class Introduction(Page):
-    pass
+    template_name = "demographics/Introduction.html"
+
+    def vars_for_template(self):
+        return {'title': "A bit about you...",
+                'button_text': "Next"}
 
 
 class QuestionPage(Page):
-    template_name = "global/Questions.html"
     form_model = 'player'
+    template_name = "ledr/SimplePage.html"
 
     def vars_for_template(self):
         return {'title': "A bit about you..."}
