@@ -7,6 +7,7 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=[
             'intro',
+            'instructions',
             'demographics',
             'outro'
         ]
