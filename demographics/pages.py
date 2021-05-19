@@ -52,7 +52,6 @@ class Page7(QuestionPage):
 page_sequence = [
     Introduction,
     Page1,
-    Page2,
     Page3,
     Page4,
     Page5,
