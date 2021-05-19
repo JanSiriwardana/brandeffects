@@ -3,16 +3,16 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
+class Introduction(Page):
+    def vars_for_template(self):
+        return {'button_text': "Go on to next page"}
+
+
+class Comprehension(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
-    pass
-
-
-class Results(Page):
-    pass
-
-
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [
+    Introduction,
+    Comprehension,
+]
