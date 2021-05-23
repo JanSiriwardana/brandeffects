@@ -3,8 +3,12 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
-    pass
+class Beers_instructions(Page):
+    template_name = "beers/Beers_instructions.html"
+
+    def vars_for_template(self):
+        return {'title': "Round...",
+                'button_text': "Next"}
 
 
 class ResultsWaitPage(WaitPage):
@@ -15,4 +19,4 @@ class Results(Page):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [Beers_instructions, ResultsWaitPage, Results]
