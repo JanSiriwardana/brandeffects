@@ -8,11 +8,20 @@ class Introduction(Page):
         return {'button_text': "Go on to next page"}
 
 
+class Consent(Page):
+    form_model = 'player'
+    form_fields = ['consent']
+
+    def vars_for_template(self):
+        return {'button_text': "Confirm"}
+
+
 class Comprehension(Page):
     pass
 
 
 page_sequence = [
     Introduction,
+    Consent,
     Comprehension,
 ]

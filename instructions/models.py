@@ -13,7 +13,7 @@ from otree.api import (
 author = 'Your name here'
 
 doc = """
-Your app description
+MUI test instructions, consent and comprehension questions
 """
 
 
@@ -32,4 +32,12 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    consent = models.IntegerField(
+        label="Please select your choice below",
+        choices=[
+            [1, "Agree"],
+            [2, "Disagree"],
+            ],
+        widget=widgets.RadioSelect,
+        blank=False,
+    )
