@@ -41,3 +41,36 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
         blank=False,
     )
+
+    comprehension_1 = models.IntegerField(
+        label="How many choice sets will you face in round 2?",
+        choices=[
+            [1, "3"],
+            [2, "8"],
+            [3, "10"],
+        ],
+        widget=widgets.RadioSelect,
+        blank=False
+    )
+
+    comprehension_2 = models.IntegerField(
+        label="How many rounds in total are there?",
+        choices=[
+            [1, "3"],
+            [2, "4"],
+            [3, "5"],
+        ],
+        widget=widgets.RadioSelect,
+        blank=False
+    )
+
+    comprehension_3 = models.IntegerField(
+        label="Which of these is NOT a product type you will see?",
+        choices=[
+            [1, "Beer"],
+            [2, "Shampoo"],
+            [3, "Broadband service providers"],
+        ],
+        widget=widgets.RadioSelect,
+        blank=False
+    )

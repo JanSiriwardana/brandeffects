@@ -16,8 +16,16 @@ class Consent(Page):
         return {'button_text': "Confirm"}
 
 
-class Comprehension(Page):
-    pass
+class QuestionPage(Page):
+    form_model = 'player'
+    template_name = "ledr/SimplePage.html"
+
+    def vars_for_template(self):
+        return {'title': "Please answer the following questions"}
+
+
+class Comprehension(QuestionPage):
+    form_fields = ['comprehension_1', 'comprehension_2', 'comprehension_3']
 
 
 page_sequence = [
