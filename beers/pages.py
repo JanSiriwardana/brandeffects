@@ -13,8 +13,13 @@ class Beers_instructions(Page):
 
 class Decision(Page):
     def vars_for_template(self):
+        items = list(MenuItem.objects.filter(player=self.player))
         return {
-            'items': list(MenuItem.objects.filter(player=self.player))
+            'items': items,
+            'attributes': [
+                [item.attributes()[i].value for item in items]
+                for i in [0,1,2]
+            ]
         }
 
 

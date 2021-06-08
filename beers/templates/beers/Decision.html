@@ -15,6 +15,16 @@
     {% endfor %}
     </tr>
     </thead>
+    <tbody>
+    {% for attribute in attributes %}
+    <tr>
+    <td></td>
+    {% for val in attribute %}
+        <td>{{ val }}</td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
     </table>
 
     {% next_button %}
