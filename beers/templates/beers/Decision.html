@@ -24,6 +24,15 @@
     {% endfor %}
     </tr>
     {% endfor %}
+
+    <tr>
+        <td>Your choice:</td>
+        {% for item in items %}
+            <td>
+            <input name="choice" type="radio" value="{{ forloop.counter0 }}" required/>
+            </td>
+        {% endfor %}
+    </tr>
     </tbody>
     </table>
 

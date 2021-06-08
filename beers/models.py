@@ -57,7 +57,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    choice = models.IntegerField(label="Your choice")
 
 
 class MenuItem(ExtraModel):
