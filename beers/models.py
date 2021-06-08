@@ -25,7 +25,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 2
     num_items = 3
-    num_attribs = 3
+    attribute_names = ['Price', 'ABV', 'Container', 'Volume']
 
 
 class Subsession(BaseSubsession):
@@ -37,9 +37,9 @@ class Subsession(BaseSubsession):
                                 product_type="beer",
                                 product_name=str(item_number))
                 item.save()
-                for attrib_number in range(Constants.num_attribs):
+                for attrib_name in Constants.attribute_names:
                     attrib = MenuItemAttribute(item=item,
-                                               attribute=str(attrib_number),
+                                               attribute=attrib_name,
                                                value=str(random.random()))
                     attrib.save()
 
@@ -60,6 +60,9 @@ class MenuItem(ExtraModel):
 
     def attributes(self):
         return list(MenuItemAttribute.objects.filter(item=self))
+
+    def get_attribute(self, attrib_name):
+        return MenuItemAttribute.objects.filter(item=self, attribute=attrib_name)[0]
 
 
 class MenuItemAttribute(ExtraModel):

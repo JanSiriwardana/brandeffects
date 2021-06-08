@@ -16,10 +16,10 @@
     </tr>
     </thead>
     <tbody>
-    {% for attribute in attributes %}
+    {% for attribute, values in attributes.items %}
     <tr>
-    <td></td>
-    {% for val in attribute %}
+    <td>{{ attribute }}</td>
+    {% for val in values %}
         <td>{{ val }}</td>
     {% endfor %}
     </tr>

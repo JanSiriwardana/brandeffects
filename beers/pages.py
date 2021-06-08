@@ -16,10 +16,10 @@ class Decision(Page):
         items = list(MenuItem.objects.filter(player=self.player))
         return {
             'items': items,
-            'attributes': [
-                [item.attributes()[i].value for item in items]
-                for i in [0,1,2]
-            ]
+            'attributes': {
+                attrib_name: [item.get_attribute(attrib_name).value for item in items]
+                for attrib_name in Constants.attribute_names
+            }
         }
 
 
