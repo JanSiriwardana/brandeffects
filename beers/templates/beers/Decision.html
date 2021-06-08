@@ -6,7 +6,17 @@
 {% endblock %}
 
 {% block content %}
-{{ items }}
+    <table class="table-bordered">
+    <thead>
+    <tr>
+    <th>Product name</th>
+    {% for item in items %}
+        <th>{{ item.product_name }}</th>
+    {% endfor %}
+    </tr>
+    </thead>
+    </table>
+
     {% next_button %}
 {% endblock %}
 
