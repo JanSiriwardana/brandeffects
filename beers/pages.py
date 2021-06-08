@@ -18,7 +18,7 @@ class Decision(Page):
             'items': items,
             'attributes': {
                 attrib_name: [item.get_attribute(attrib_name).value for item in items]
-                for attrib_name in Constants.attribute_names
+                for attrib_name in Constants.attributes
             }
         }
 

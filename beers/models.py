@@ -25,22 +25,30 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 2
     num_items = 3
-    attribute_names = ['Price', 'ABV', 'Container', 'Volume']
+    attributes = {
+        'Price': [ "1.00", "2.00", "3.00" ],
+        'ABV': [ "2%", "3%", "4%" ],
+        'Container': [ "Bottle", "Can" ],
+        'Volume': ["330 mL", "500 mL", "1 L" ]
+    }
 
 
 class Subsession(BaseSubsession):
     def creating_session(self):
         for player in self.get_players():
+            # TODO: This generates draws 'with replacement' from the set
+            # of possible products.  Re-write to first create the set
+            # of possible products and then draw from those...
             for item_number in range(Constants.num_items):
                 item = MenuItem(player=player,
                                 product_number=item_number,
                                 product_type="beer",
                                 product_name=str(item_number))
                 item.save()
-                for attrib_name in Constants.attribute_names:
+                for name, values in Constants.attributes.items():
                     attrib = MenuItemAttribute(item=item,
-                                               attribute=attrib_name,
-                                               value=str(random.random()))
+                                               attribute=name,
+                                               value=random.choice(values))
                     attrib.save()
 
 
