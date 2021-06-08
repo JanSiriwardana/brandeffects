@@ -1,6 +1,6 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
-from .models import Constants
+from .models import Constants, MenuItem
 
 
 class Beers_instructions(Page):
@@ -11,12 +11,18 @@ class Beers_instructions(Page):
                 'button_text': "Next"}
 
 
-class ResultsWaitPage(WaitPage):
-    pass
+class Decision(Page):
+    def vars_for_template(self):
+        return {
+            'items': list(MenuItem.objects.filter(player=self.player))
+        }
 
 
 class Results(Page):
     pass
 
 
-page_sequence = [Beers_instructions, ResultsWaitPage, Results]
+page_sequence = [
+    #Beers_instructions,
+    Decision
+]
