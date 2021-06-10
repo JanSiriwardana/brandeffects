@@ -1,4 +1,5 @@
 import random
+import itertools
 
 from otree.api import (
     models,
@@ -20,17 +21,26 @@ Your app description
 """
 
 
+
 class Constants(BaseConstants):
     name_in_url = 'beers'
     players_per_group = None
     num_rounds = 2
-    num_items = 3
-    attributes = {
-        'Price': [ "1.00", "2.00", "3.00" ],
-        'ABV': [ "2%", "3%", "4%" ],
-        'Container': [ "Bottle", "Can" ],
-        'Volume': ["330 mL", "500 mL", "1 L" ]
-    }
+    num_items = 4
+
+    Price = ["3.00", "5.00", "7.00"]
+    ABV = ["3.2", "4", "5"]
+    Can = ["Can", "Bottle"]
+    Vol = ["3.3", "4.4", "5"]
+
+    full_fact = list(itertools.product(Price, ABV, Can, Vol))
+    full_fact_transpose = list(zip(*full_fact))
+
+    levels = ['Price', 'ABV', 'Container', 'Volume']
+    zip_attributes = zip(levels, full_fact_transpose)
+    attributes = dict(zip_attributes)
+
+    option = ['A', 'B', 'C', 'D']
 
 
 class Subsession(BaseSubsession):
@@ -39,16 +49,19 @@ class Subsession(BaseSubsession):
             # TODO: This generates draws 'with replacement' from the set
             # of possible products.  Re-write to first create the set
             # of possible products and then draw from those...
-            for item_number in range(Constants.num_items):
+            menu = random.sample(range(0, len(Constants.full_fact)), Constants.num_items)
+            for alt in menu:
+                index = menu.index(alt)
                 item = MenuItem(player=player,
-                                product_number=item_number,
+                                product_number=alt,
                                 product_type="beer",
-                                product_name=str(item_number))
+                                product_name=Constants.option[index])
                 item.save()
+
                 for name, values in Constants.attributes.items():
                     attrib = MenuItemAttribute(item=item,
                                                attribute=name,
-                                               value=random.choice(values))
+                                               value=values[alt])
                     attrib.save()
 
 
