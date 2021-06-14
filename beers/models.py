@@ -28,10 +28,10 @@ class Constants(BaseConstants):
     num_rounds = 2
     num_items = 4
 
-    Price = ["3.00", "5.00", "7.00"]
-    ABV = ["3.2", "4", "5"]
+    Price = ["£3.00", "£5.00", "£7.00"]
+    ABV = ["3.2%", "4.0%", "5.5%"]
     Can = ["Can", "Bottle"]
-    Vol = ["3.3", "4.4", "5"]
+    Vol = ["3.3cl", "4.4cl", "5.0cl"]
 
     full_fact = list(itertools.product(Price, ABV, Can, Vol))
     full_fact_transpose = list(zip(*full_fact))
