@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Page title {{ player.round_number }}/{{ Constants.num_rounds }}
 {% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
     </tr>
     {% endfor %}
 
-    <tr>
+    <tr class="table-danger">
         <td style="font-weight: bold">Your choice:</td>
         {% for item in items %}
             <td style="text-align:center">
