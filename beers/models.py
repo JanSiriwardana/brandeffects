@@ -41,7 +41,10 @@ class Constants(BaseConstants):
     attributes = dict(zip_attributes)
 
     option = ['A', 'B', 'C', 'D']
+    # TODO: from list of brands select one at random without replacement
+    # for each round
 
+    brands = ['Amstel', 'Budweiser', 'Carslberg', 'Corona']
 
 class Subsession(BaseSubsession):
     def creating_session(self):

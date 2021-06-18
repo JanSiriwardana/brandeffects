@@ -6,6 +6,9 @@ from .models import Constants, MenuItem
 class Beers_instructions(Page):
     template_name = "beers/Beers_instructions.html"
 
+    def is_displayed(player):
+        return player.round_number == 1
+
     def vars_for_template(self):
         return {'title': "Round...",
                 'button_text': "Next"}
@@ -28,6 +31,6 @@ class Results(Page):
 
 
 page_sequence = [
-    #Beers_instructions,
+    Beers_instructions,
     Decision
 ]
