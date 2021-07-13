@@ -3,12 +3,15 @@ from ._builtin import Page, WaitPage
 from .models import Constants, MenuItem
 
 
-class Beers_instructions(Page):
-    template_name = "beers/Beers_instructions.html"
+class Instructions(Page):
+    template_name = "choices/Instructions.html"
 
     def vars_for_template(self):
         return {'title': "Round...",
                 'button_text': "Next"}
+
+    def is_displayed(self):
+        return (self.round_number - 1) % Constants.num_rounds_per_product == 0
 
 
 class Decision(Page):
@@ -18,7 +21,7 @@ class Decision(Page):
             'items': items,
             'attributes': {
                 attrib_name: [item.get_attribute(attrib_name).value for item in items]
-                for attrib_name in Constants.attributes
+                for attrib_name in Constants.attributes[items[0].product_type]
             }
         }
 
@@ -28,6 +31,6 @@ class Results(Page):
 
 
 page_sequence = [
-    #Beers_instructions,
+    Instructions,
     Decision
 ]

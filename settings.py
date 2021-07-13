@@ -8,7 +8,7 @@ SESSION_CONFIGS = [
         app_sequence=[
             #'intro',
             #'instructions',
-            'beers',
+            'choices',
             #'demographics',
             #'outro'
         ]
