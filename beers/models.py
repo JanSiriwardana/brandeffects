@@ -28,40 +28,40 @@ class Constants(BaseConstants):
     num_rounds = 2
     num_items = 4
 
-    Price = ["£3.00", "£5.00", "£7.00"]
-    ABV = ["3.2%", "4.0%", "5.5%"]
-    Can = ["Can", "Bottle"]
-    Vol = ["3.3cl", "4.4cl", "5.0cl"]
+    attributes = {
+        "Price": ["£3.00", "£5.00", "£7.00"],
+        "ABV": ["3.2%", "4.0%", "5.5%"],
+        "Container": ["Can", "Bottle"],
+        "Volume": ["3.3cl", "4.4cl", "5.0cl"]
+    }
 
-    full_fact = list(itertools.product(Price, ABV, Can, Vol))
-    full_fact_transpose = list(zip(*full_fact))
-
-    levels = ['Price', 'ABV', 'Container', 'Volume']
-    zip_attributes = zip(levels, full_fact_transpose)
-    attributes = dict(zip_attributes)
-
-    option = ['A', 'B', 'C', 'D']
+    options = ['A', 'B', 'C', 'D']
 
 
 class Subsession(BaseSubsession):
     def creating_session(self):
+        products = [
+            {k: v
+             for k, v in zip(Constants.attributes.keys(), product)}
+            for product in itertools.product(*Constants.attributes.values())
+        ]
         for player in self.get_players():
             # TODO: This generates draws 'with replacement' from the set
             # of possible products.  Re-write to first create the set
             # of possible products and then draw from those...
-            menu = random.sample(range(0, len(Constants.full_fact)), Constants.num_items)
-            for alt in menu:
+            menu = random.sample(products, Constants.num_items)
+            for (alt_name, alt) in zip(Constants.options, menu):
                 index = menu.index(alt)
                 item = MenuItem(player=player,
-                                product_number=alt,
+                                product_number=products.index(alt),
                                 product_type="beer",
-                                product_name=Constants.option[index])
+                                product_name=alt_name)
                 item.save()
 
-                for name, values in Constants.attributes.items():
+                for (name, value) in alt.items():
                     attrib = MenuItemAttribute(item=item,
                                                attribute=name,
-                                               value=values[alt])
+                                               value=value)
                     attrib.save()
 
 
