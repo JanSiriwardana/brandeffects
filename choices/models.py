@@ -26,8 +26,13 @@ class Constants(BaseConstants):
     name_in_url = 'Choices'
     players_per_group = None
 
+    brands = {
+        "beers": ["Heinecken", "Stella Artois"],
+        "movies": ["Netflix", "Amazon Prime"],
+        "broadband": ["BT", "Virgin"]
+    }
     attributes = {
-        "choices": {
+        "beers": {
             "Price": ["£3.00", "£5.00", "£7.00"],
             "ABV": ["3.2%", "4.0%", "5.5%"],
             "Container": ["Can", "Bottle"],
@@ -69,6 +74,9 @@ class Subsession(BaseSubsession):
             # of possible products.  Re-write to first create the set
             # of possible products and then draw from those...
             product_type = player.get_product_type()
+            player.brand = random.choice(Constants.brands[product_type])
+            if player.round_number % 2 == 0:
+                player.required_choice = "B"
             menu = random.sample(products[product_type], Constants.num_items)
             for (alt_name, alt) in zip(Constants.options, menu):
                 index = menu.index(alt)
@@ -90,6 +98,8 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    brand = models.StringField()
+    required_choice = models.StringField()
     choice = models.IntegerField(label="Your choice")
 
     def get_product_type(self):
