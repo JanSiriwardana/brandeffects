@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block content %}
+    {% if player.required_choice is not None %}
+        <p>
+            Please choose <b>Product {{ player.required_choice }}</b>.
+        </p>
+    {% else %}
+        <p>
+            Products from {{ player.brand }}
+        </p>
+    {% endif %}
     <table class="table table-striped table-bordered">
     <thead>
     <tr class="table-primary">
