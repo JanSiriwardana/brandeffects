@@ -2,19 +2,61 @@
 
 {% block pre_text %}
     <p>
-    The products in this round are all <span style="color: #ff0000">beers</span>.
+    The products in this round are all
+        {% for item in type %}
+            <span style="color: #ff0000">
+                {{ item.product_type }}
+            </span>.
+        {% endfor %}
     </p>
-    <p>
-    You will be shown 8 brands of beers. Each brand is considering launching a new product.
-    </p>
-    <p>
-    Carefully consider the 4 alternatives and select the one you would most prefer.
-    </p>
-    <p>
-    Consider any characteristics not defined as being the same across all 4 alternatives
-        for a brand.
-    </p>
-    <p>
-    When you are ready, click 'Next' to move to the first brand of beers.
-    </p>
+    {% for item in type %}
+        {% if item.product_type == 'beers' %}
+            <p>
+                You will be shown 8 brands of beers. Each brand is considering launching a new product.
+            </p>
+            <p>
+                Carefully consider the 4 alternatives and select the one you would most prefer.
+            </p>
+            <p>
+                Consider any characteristics not defined as being the same across all 4 alternatives
+            for a brand.
+            </p>
+            <p>
+                When you are ready, click 'Next' to move to the first brand of beers.
+            </p>
+        {% elif item.product_type == 'movies' %}
+            <p>
+                You will be shown 8 streaming platforms. Each platform is offering a range of different movies.
+            <br>
+                Assume these are all movies you have not seen before.
+            </br>
+            </p>
+            <p>
+                Carefully consider the 4 alternatives and select the one you would most prefer.
+            </p>
+            <p>
+                Consider any characteristics not defined as being the same across all 4 alternatives
+            for a platform.
+            </p>
+            <p>
+                When you are ready, click 'Next' to move to the first streaming platform.
+            </p>
+        {% else %}
+            <p>
+                You will be shown 8 broadband service providers (ISPs). Each ISP is considering launching
+                a new package.
+            </p>
+            <p>
+                Carefully consider the 4 alternatives and select the one you would most prefer.
+            </p>
+            <p>
+                Consider any characteristics not defined as being the same across all 4 alternatives
+            for an ISP.
+            </p>
+            <p>
+                When you are ready, click 'Next' to move to the first streaming platform.
+            </p>
+        {% endif %}
+    {% endfor %}
+
 {% endblock pre_text %}

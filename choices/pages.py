@@ -7,7 +7,9 @@ class Instructions(Page):
     template_name = "choices/Instructions.html"
 
     def vars_for_template(self):
+        type = [list(MenuItem.objects.filter(player=self.player))[0]]
         return {'title': "Round...",
+                'type': type,
                 'button_text': "Next"}
 
     def is_displayed(self):
