@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Page title {{ player.round_number }}/{{ Constants.num_rounds }}
+    Choice set {{ choice_set }}
 {% endblock %}
 
 {% block content %}
@@ -12,8 +12,16 @@
         </p>
     {% else %}
         <p>
-            Products from {{ player.brand }}
-        </p>
+            {% for item in type %}
+                {% if item.product_type == 'beers' %}
+                    If <span style="color: #ff0000">{{ player.brand }}</span> launched a new beer, which would prefer?
+                {% elif item.product_type == 'movies' %}
+                    Which of these movies on <span style="color: #ff0000">{{ player.brand }}</span> would you prefer?
+                {% else %}
+                    If <span style="color: #ff0000">{{ player.brand }}</span> launched a new service, which option would you prefer?
+                    </p>
+                {% endif %}
+            {% endfor %}
     {% endif %}
     <table class="table table-striped table-bordered">
     <thead>

@@ -21,8 +21,15 @@ class Instructions(Page):
 
 class Decision(Page):
     def vars_for_template(self):
+        if self.round_number % Constants.num_rounds_per_product == 0:
+            choice_set = Constants.num_rounds_per_product
+        else:
+            choice_set = self.round_number % Constants.num_rounds_per_product
+        type = [list(MenuItem.objects.filter(player=self.player))[0]]
         items = list(MenuItem.objects.filter(player=self.player))
         return {
+            'choice_set': choice_set,
+            'type': type,
             'items': items,
             'attributes': {
                 attrib_name: [item.get_attribute(attrib_name).value for item in items]
