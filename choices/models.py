@@ -54,8 +54,9 @@ class Constants(BaseConstants):
 
     options = ['A', 'B', 'C', 'D']
 
-    num_rounds_per_product = 2
-    num_rounds = len(attributes.keys()) * num_rounds_per_product
+    num_rounds_per_product = 6
+    num_products = len(attributes.keys())
+    num_rounds = num_products * num_rounds_per_product
     num_items = 4
 
 
@@ -75,8 +76,12 @@ class Subsession(BaseSubsession):
             # of possible products and then draw from those...
             product_type = player.get_product_type()
             player.brand = random.choice(Constants.brands[product_type])
-            if player.round_number % 2 == 0:
+            if player.round_number == 3:
                 player.required_choice = "B"
+            elif player.round_number == 13:
+                player.required_choice = "A"
+            elif player.round_number == 23:
+                player.required_choice = "C"
             menu = random.sample(products[product_type], Constants.num_items)
             for (alt_name, alt) in zip(Constants.options, menu):
                 index = menu.index(alt)

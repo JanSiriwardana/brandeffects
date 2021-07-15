@@ -1,14 +1,17 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants, MenuItem
+import math
 
 
 class Instructions(Page):
     template_name = "choices/Instructions.html"
 
     def vars_for_template(self):
+        round_number = int(math.ceil(self.round_number / Constants.num_rounds_per_product))
         type = [list(MenuItem.objects.filter(player=self.player))[0]]
         return {'title': "Round...",
+                'round_number': round_number,
                 'type': type,
                 'button_text': "Next"}
 

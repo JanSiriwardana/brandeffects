@@ -1,12 +1,14 @@
 {% extends "ledr/SimplePage.html" %}
 
+{% block title %}
+    Round {{ round_number }}
+{% endblock %}
+
 {% block pre_text %}
     <p>
     The products in this round are all
         {% for item in type %}
-            <span style="color: #ff0000">
-                {{ item.product_type }}
-            </span>.
+            <span style="color: #ff0000">{{ item.product_type }}</span>.
         {% endfor %}
     </p>
     {% for item in type %}
