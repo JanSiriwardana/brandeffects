@@ -1,0 +1,23 @@
+{% extends "ledr/SimplePage.html" %}
+
+{% block title %}
+Thank you!
+{% endblock %}
+
+{% block pre_text %}
+    <p>
+        You have completed the survey.
+    </p>
+    <p>
+        Thank you for participating in our study!
+    </p>
+    <p>
+       You may now close this page and return to Prolific.
+    </p>
+{% endblock pre_text %}
+
+{% comment %}
+We suppress the confirmation/submission button because this is the final page...
+{% endcomment %}
+{% block confirm_button %}
+{% endblock %}

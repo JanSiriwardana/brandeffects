@@ -27,9 +27,9 @@ class Constants(BaseConstants):
     players_per_group = None
 
     brands = {
-        "beers": ["Heinecken", "Stella Artois"],
-        "movies": ["Netflix", "Amazon Prime"],
-        "broadband": ["BT", "Virgin"]
+        "beers": ["Heineken", "Stella Artois", "Budweiser"],
+        "movies": ["Netflix", "Amazon Prime", "Disney+"],
+        "broadband": ["BT", "Virgin", "Sky"]
     }
     attributes = {
         "beers": {
@@ -54,7 +54,7 @@ class Constants(BaseConstants):
 
     options = ['A', 'B', 'C', 'D']
 
-    num_rounds_per_product = 6
+    num_rounds_per_product = 3
     num_products = len(attributes.keys())
     num_rounds = num_products * num_rounds_per_product
     num_items = 4
@@ -70,12 +70,14 @@ class Subsession(BaseSubsession):
             ]
             for product_type in Constants.attributes.keys()
         }
+
         for player in self.get_players():
             # TODO: This generates draws 'with replacement' from the set
             # of possible products.  Re-write to first create the set
             # of possible products and then draw from those...
             product_type = player.get_product_type()
-            player.brand = random.choice(Constants.brands[product_type])
+            player.brand = Constants.brands[product_type][player.round_number % Constants.num_rounds_per_product]
+            print(player.brand)
             if player.round_number == 3:
                 player.required_choice = "B"
             elif player.round_number == 13:

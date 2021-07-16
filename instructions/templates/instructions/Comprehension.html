@@ -1,13 +1,16 @@
-{% extends "global/Page.html" %}
+{% extends "ledr/SimplePage.html" %}
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Introduction
 {% endblock %}
 
-{% block content %}
+{% block pre_text %}
+   <p>
+    Please answer the following questions to make sure you have understood the instructions.
+    </p>
+{% endblock pre_text %}
 
-    {% next_button %}
-{% endblock %}
+
 
 

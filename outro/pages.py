@@ -5,6 +5,11 @@ class ThankYou(Page):
     pass
 
 
+class JanThankYou(Page):
+    pass
+
+
 page_sequence = [
-    ThankYou,
+    #ThankYou,
+    JanThankYou,
 ]
