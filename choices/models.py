@@ -80,9 +80,9 @@ class Subsession(BaseSubsession):
             print(player.brand)
             if player.round_number == 3:
                 player.required_choice = "B"
-            elif player.round_number == 13:
+            elif player.round_number == 5:
                 player.required_choice = "A"
-            elif player.round_number == 23:
+            elif player.round_number == 7:
                 player.required_choice = "C"
             menu = random.sample(products[product_type], Constants.num_items)
             for (alt_name, alt) in zip(Constants.options, menu):

@@ -7,10 +7,11 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=[
             #'intro',
-            'instructions',
-            'choices',
-            'demographics',
-            'outro'
+            #'instructions',
+            #'choices',
+            'round_4',
+            #'demographics',
+            #'outro'
         ]
     ),
 ]
