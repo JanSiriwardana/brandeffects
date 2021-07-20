@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Choice Set 1
+{% endblock %}
+
+{% block content %}
+    <table class = "table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 33.33%">Beer</th>
+      <th scope="col" style="width: 33.33%">Movie Rental</th>
+      <th scope="col" style="width: 33.33%">Broadband</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Price: Mark</td>
+      <td>Price: Otto</td>
+      <td>Price: </td>
+    </tr>
+    <tr>
+      <td>ABV: Jacob</td>
+      <td>Year of release: Thornton</td>
+      <td>Speed: @fat</td>
+    </tr>
+    <tr>
+      <td>Container: Larry</td>
+      <td>Genre: the Bird</td>
+      <td>Contract length: @twitter</td>
+    </tr>
+    <tr>
+      <td>Volume: Larry</td>
+      <td>Rating: the Bird</td>
+      <td>Data Cap: @twitter</td>
+    </tr>
+    <tr>
+      <td>
+          <input name="choice" type="radio" required/>
+      </td>
+      <td>
+          <input name="choice" type="radio">
+      </td>
+      <td>
+          <input name="choice" type="radio">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    {% next_button %}
+
+{% endblock %}
