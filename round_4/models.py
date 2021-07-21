@@ -45,4 +45,4 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    choice = models.IntegerField
+    choice = models.IntegerField()

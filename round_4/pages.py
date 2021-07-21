@@ -9,6 +9,9 @@ class Instructions(Page):
     def vars_for_template(self):
         return {'button_text': 'Next'}
 
+    def is_displayed(self):
+        return (self.round_number) == 1
+
 class Decision(Page):
     template_name = "round_4/Decision.html"
 
