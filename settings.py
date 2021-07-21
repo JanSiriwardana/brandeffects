@@ -4,12 +4,12 @@ SESSION_CONFIGS = [
     dict(
         name='default',
         display_name="Default",
-        num_demo_participants=1,
+        num_demo_participants=3,
         app_sequence=[
             #'intro',
             #'instructions',
-            #'choices',
-            'round_4',
+            'choices',
+            #'round_4',
             #'demographics',
             #'outro'
         ]

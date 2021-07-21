@@ -62,6 +62,11 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
+        if (self.round_number - 1) % Constants.num_rounds_per_product == 0:
+            for product_type in Constants.brands.keys():
+                random.shuffle(Constants.brands[product_type])
+            print(Constants.brands)
+
         products = {
             product_type: [
                 {k: v
