@@ -2,11 +2,15 @@
 {% load otree static %}
 
 {% block title %}
-    Choice Set 1
+    Choice Set {{ player.round_number }}
 {% endblock %}
 
 {% block content %}
-    <table class = "table table-striped table-bordered">
+    <p>
+        Please select your preferred option
+    </p>
+
+    <table class = "table table-striped table-bordered" style="text-align:center">
   <thead>
     <tr>
       <th scope="col" style="width: 33.33%">Beer</th>
@@ -16,24 +20,24 @@
   </thead>
   <tbody>
     <tr>
-      <td>Price: Mark</td>
-      <td>Price: Otto</td>
-      <td>Price: </td>
+      <td>Price: {{ beer_price }}</td>
+      <td>Price: {{ movie_price }}</td>
+      <td>Price: {{ broadband_price }}</td>
     </tr>
     <tr>
-      <td>ABV: Jacob</td>
-      <td>Year of release: Thornton</td>
-      <td>Speed: @fat</td>
+      <td>ABV: {{ ABV }}</td>
+      <td>Year of release: {{ year_of_release }}</td>
+      <td>Speed: {{ speed }}</td>
     </tr>
     <tr>
-      <td>Container: Larry</td>
-      <td>Genre: the Bird</td>
-      <td>Contract length: @twitter</td>
+      <td>Container: {{ container }}</td>
+      <td>Genre: {{ genre }}</td>
+      <td>Contract length: {{ contract_length }}</td>
     </tr>
     <tr>
-      <td>Volume: Larry</td>
-      <td>Rating: the Bird</td>
-      <td>Data Cap: @twitter</td>
+      <td>Volume: {{ volume }}</td>
+      <td>Rating: {{ rating }}</td>
+      <td>Data Cap: {{ data_cap }}</td>
     </tr>
     <tr>
       <td>
