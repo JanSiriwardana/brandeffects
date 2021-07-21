@@ -3,6 +3,12 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
+class Instructions(Page):
+    template_name = "round_4/Instructions.html"
+
+    def vars_for_template(self):
+        return {'button_text': 'Next'}
+
 class Decision(Page):
     template_name = "round_4/Decision.html"
 
@@ -40,5 +46,6 @@ class Results(Page):
 
 
 page_sequence = [
+    Instructions,
     Decision
 ]
