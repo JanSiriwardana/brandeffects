@@ -27,9 +27,12 @@ class Constants(BaseConstants):
     players_per_group = None
 
     brands = {
-        "beers": ["Heineken", "Stella Artois", "Budweiser"],
-        "movies": ["Netflix", "Amazon Prime", "Disney+"],
-        "broadband": ["BT", "Virgin", "Sky"]
+        "beers": ["Heineken", "Stella Artois", "Budweiser", "Corona", "Busch", "Coors", "Miller", "Modelo",
+                  "Samuel Adams"],
+        "movies": ["Netflix", "Prime Video", "Disney+", "Hulu", "HBOMax", "AppleTV+", "Paramount+", "Youtube Premium",
+                   "Peacock"],
+        "broadband": ["Frontier", "Verizon", "Altice", "Mediacom", "CharterSpectrum", "CenturyLink", "AT&T", "Cox",
+                      "Xfinity"]
     }
     attributes = {
         "beers": {
@@ -54,7 +57,7 @@ class Constants(BaseConstants):
 
     options = ['A', 'B', 'C', 'D']
 
-    num_rounds_per_product = 3
+    num_rounds_per_product = 9
     num_products = len(attributes.keys())
     num_rounds = num_products * num_rounds_per_product
     num_items = 4
@@ -85,9 +88,9 @@ class Subsession(BaseSubsession):
             print(player.brand)
             if player.round_number == 3:
                 player.required_choice = "B"
-            elif player.round_number == 5:
+            elif player.round_number == 15:
                 player.required_choice = "A"
-            elif player.round_number == 7:
+            elif player.round_number == 22:
                 player.required_choice = "C"
             menu = random.sample(products[product_type], Constants.num_items)
             for (alt_name, alt) in zip(Constants.options, menu):
