@@ -5,7 +5,7 @@ from .models import Constants
 
 class Introduction(Page):
     def vars_for_template(self):
-        return {'button_text': "Go on to next page"}
+        return {'button_text': "Next"}
 
 
 class Consent(Page):
