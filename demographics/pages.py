@@ -49,12 +49,18 @@ class Page7(QuestionPage):
     form_fields = ['timeuea']
 
 
+class Page8(QuestionPage):
+    form_fields = ['state']
+
+
 page_sequence = [
     Introduction,
     Page1,
-    Page3,
-    Page4,
-    Page5,
-    Page6,
-    Page7,
+    Page2,
+    #Page3,
+    #Page4,
+    #Page5,
+    #Page6,
+    #Page7,
+    Page8,
 ]
