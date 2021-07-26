@@ -6,12 +6,12 @@ SESSION_CONFIGS = [
         display_name="Default",
         num_demo_participants=2,
         app_sequence=[
-            'intro',
+            #'intro',
             'instructions',
-            'choices',
+            #'choices',
             'round_4',
-            'demographics',
-            'outro'
+            #'demographics',
+            #'outro'
         ]
     ),
 ]

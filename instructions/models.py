@@ -32,6 +32,11 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    prolific_id = models.StringField(
+        label="Please enter your Prolific ID",
+        blank=True,
+    )
+
     consent = models.IntegerField(
         label="Please select your choice below",
         choices=[
