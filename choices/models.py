@@ -84,7 +84,12 @@ class Subsession(BaseSubsession):
             # of possible products.  Re-write to first create the set
             # of possible products and then draw from those...
             product_type = player.get_product_type()
-            player.brand = Constants.brands[product_type][player.round_number % Constants.num_rounds_per_product]
+            if player.id_in_group % 3 == 0:
+                player.brand = Constants.brands[product_type][(player.id_in_group * player.round_number +
+                                                              player.round_number + 1) % Constants.num_rounds_per_product]
+            else:
+                player.brand = Constants.brands[product_type][(player.id_in_group * player.round_number +
+                                                               player.id_in_group) % Constants.num_rounds_per_product]
             print(player.brand)
             if player.round_number == 3:
                 player.required_choice = "B"
