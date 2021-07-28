@@ -20,7 +20,7 @@ class Decision(Page):
         movie_price = Constants.movie_price[self.round_number - 1]
         broadband_price = Constants.broadband_price[self.round_number - 1]
         ABV = Constants.ABV[self.round_number - 1]
-        year_of_release = Constants.year_of_release[self.round_number - 1]
+        decade_of_release = Constants.decade_of_release[self.round_number - 1]
         speed = Constants.speed[self.round_number - 1]
         container = Constants.container[self.round_number - 1]
         genre = Constants.genre[self.round_number - 1]
@@ -33,7 +33,7 @@ class Decision(Page):
                 'movie_price': movie_price,
                 'broadband_price': broadband_price,
                 'ABV': ABV,
-                'year_of_release': year_of_release,
+                'decade_of_release': decade_of_release,
                 'speed': speed,
                 'container': container,
                 'genre': genre,
