@@ -93,6 +93,26 @@ class Player(BasePlayer):
         blank=True,
     )
 
+    ethnicity = models.IntegerField(
+        label="Which of the following best describes you?",
+        choices=[
+            [1, "Asian or Pacific Islander"],
+            [2, "Black or African American"],
+            [3, "Hispanic or Latino"],
+            [4, "Native American or Alaskan Native"],
+            [5, "White or Caucasian"],
+            [6, "Multiracial or Biracial"],
+            [7, "A race/ethnicity not listed here"]
+        ],
+        widget=widgets.RadioSelect,
+        blank=False,
+    )
+
+    income = models.IntegerField(
+        label="What is your net monthly income in dollars?",
+        blank=False,
+    )
+
     state = models.IntegerField(
         label="In which state do you currently reside?",
         choices=[[1, "Alabama"],

@@ -53,6 +53,13 @@ class Page8(QuestionPage):
     form_fields = ['state']
 
 
+class Page9(QuestionPage):
+    form_fields = ['ethnicity']
+
+
+class Page10(QuestionPage):
+    form_fields = ['income']
+
 page_sequence = [
     Introduction,
     Page1,
@@ -63,4 +70,6 @@ page_sequence = [
     #Page6,
     #Page7,
     Page8,
+    Page9,
+    Page10,
 ]

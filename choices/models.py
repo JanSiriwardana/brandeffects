@@ -36,22 +36,22 @@ class Constants(BaseConstants):
     }
     attributes = {
         "beers": {
-            "Price": ["£3.00", "£5.00", "£7.00"],
-            "ABV": ["3.2%", "4.0%", "5.5%"],
+            "Price/6 pack": ["$6.49", "$7.99", "$10.99"],
+            "ABV": ["3.6%", "4.6%", "5.5%"],
             "Container": ["Can", "Bottle"],
-            "Volume": ["3.3cl", "4.4cl", "5.0cl"]
+            "Volume": ["8.4-oz", "12-oz", "16-oz"]
         },
         "movies": {
-            "Price": ["£1.99", "£2.99", "£4.99"],
-            "Year of release": ["2014", "2017", "2020"],
+            "Price": ["$3.99", "$6.99", "$9.99"],
+            "Decade of release": ["1990", "2000", "2010"],
             "Genre": ["Drama", "Comedy"],
             "Rating": ["3 stars", "4 stars", "5 stars"]
         },
         "broadband": {
-            "Price": ["£21.50", "£30.00", "£39.00"],
-            "Speed": ["11 Mb/s", "59 MB/s", "145 MB/s"],
+            "Price/month": ["$20", "$30", "$40"],
+            "Speed": ["25 Mb/s", "50 MB/s", "100 MB/s"],
             "Contract length": ["12 months", "24 months"],
-            "Data cap": ["30GB", "80GB", "500GB"]
+            "Data cap": ["100GB", "300GB", "1000GB"]
         }
     }
 
