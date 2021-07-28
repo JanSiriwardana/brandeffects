@@ -39,13 +39,13 @@ class Constants(BaseConstants):
             "Price/6 pack": ["$6.49", "$7.99", "$10.99"],
             "ABV": ["3.6%", "4.6%", "5.5%"],
             "Container": ["Can", "Bottle"],
-            "Volume": ["8.4-oz", "12-oz", "16-oz"]
+            "Volume per container": ["8.4-oz", "12-oz", "16-oz"]
         },
         "movies": {
             "Price": ["$3.99", "$6.99", "$9.99"],
             "Decade of release": ["1990", "2000", "2010"],
             "Genre": ["Drama", "Comedy"],
-            "Rating": ["3 stars", "4 stars", "5 stars"]
+            "Rating (out of 10)": ["4", "6", "9"]
         },
         "broadband": {
             "Price/month": ["$20", "$30", "$40"],
