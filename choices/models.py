@@ -57,7 +57,7 @@ class Constants(BaseConstants):
 
     options = ['A', 'B', 'C', 'D']
 
-    num_rounds_per_product = 9
+    num_rounds_per_product = 3
     num_products = len(attributes.keys())
     num_rounds = num_products * num_rounds_per_product
     num_items = 4
@@ -145,3 +145,10 @@ class MenuItemAttribute(ExtraModel):
     item = models.Link(MenuItem)
     attribute = models.StringField()
     value = models.StringField()
+
+
+def custom_export(players):
+    # header row
+    yield ['session', 'participant_code', 'round_number', 'id_in_group']
+    for p in players:
+        yield [p.session.code, p.participant.code, p.round_number, p.id_in_group,]
