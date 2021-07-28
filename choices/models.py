@@ -149,6 +149,6 @@ class MenuItemAttribute(ExtraModel):
 
 def custom_export(players):
     # header row
-    yield ['session', 'participant_code', 'round_number', 'id_in_group']
+    yield ['session', 'participant_code', 'round_number', 'id_in_group', 'product_type']
     for p in players:
-        yield [p.session.code, p.participant.code, p.round_number, p.id_in_group,]
+        yield [p.session.code, p.participant.code, p.round_number, p.id_in_group, p.product_type]
