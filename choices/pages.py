@@ -21,10 +21,16 @@ class Instructions(Page):
 
 class Decision(Page):
     def vars_for_template(self):
-        if self.round_number % Constants.num_rounds_per_product == 0:
-            choice_set = Constants.num_rounds_per_product
+        if 1 <= self.round_number <= 3 or 10 <= self.round_number <= 15 or 19 <= self.round_number <= 22:
+            if self.round_number % Constants.num_rounds_per_product == 0:
+                choice_set = Constants.num_rounds_per_product
+            else:
+                choice_set = self.round_number % Constants.num_rounds_per_product
         else:
-            choice_set = self.round_number % Constants.num_rounds_per_product
+            if self.round_number % Constants.num_rounds_per_product == 0:
+                choice_set = Constants.num_rounds_per_product -1
+            else:
+                choice_set = (self.round_number % Constants.num_rounds_per_product) - 1
         type = [list(MenuItem.objects.filter(player=self.player))[0]]
         items = list(MenuItem.objects.filter(player=self.player))
         return {
