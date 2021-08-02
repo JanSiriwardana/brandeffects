@@ -20,6 +20,9 @@ class Instructions(Page):
 
 
 class Decision(Page):
+    form_model = 'player'
+    form_fields = ['choice']
+
     def vars_for_template(self):
         if 1 <= self.round_number <= 3 or 10 <= self.round_number <= 15 or 19 <= self.round_number <= 22:
             if self.round_number % Constants.num_rounds_per_product == 0:
