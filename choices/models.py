@@ -154,6 +154,6 @@ def custom_export(players):
         items = list(MenuItem.objects.filter(player=p))
         for item in items:
             yield (
-                [p.session.code, p.participant.code, p.round_number, p.brand, p.choice] + [item.product_number] +
+                [p.session.code, p.participant.code, p.round_number, p.brand, p.choice] + [item.product_type, item.product_number] +
                 [p.required_choice]
             )
