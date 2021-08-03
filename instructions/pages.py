@@ -8,6 +8,12 @@ class Prolific(Page):
     form_model = 'player'
     form_fields = ['prolific_id']
 
+    @staticmethod
+    def before_next_page(player: Player, timeout_happened):
+        participant = player.participant
+        participant.prolific_id = player.prolific_id
+
+
     def vars_for_template(self):
         return {'button_text': "Confirm"}
 

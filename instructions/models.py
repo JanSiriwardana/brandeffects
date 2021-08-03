@@ -85,7 +85,7 @@ def custom_export(players):
     yield['session', 'participant_code', 'prolific_id', 'consent', 'comp_1', 'comp_2', 'comp_3']
     for p in players:
         yield (
-            p.session.code, p.participant.code, p.prolific_id, p.consent, p.comprehension_1, p.comprehension_2,
+            p.session.code, p.participant.code, p.prolific_id, p.consent, p.comprehension_1, p.comprehension_2, 
             p.comprehension_3 
         )
 
