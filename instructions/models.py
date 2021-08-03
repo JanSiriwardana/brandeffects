@@ -84,7 +84,7 @@ class Player(BasePlayer):
 def custom_export(players):
     yield['session', 'participant_code']
     for p in players:
-        yield(
+        yield (
             p.session.code, p.partipant.code
         )
 

@@ -33,7 +33,7 @@ class Constants(BaseConstants):
     genre = ['Drama', 'Drama', 'Comedy']
     contract_length = ['12 months', '24 months', '12 months']
     volume = ['16-oz', '12-oz', '8.4-oz']
-    rating = ['3 stars', '5 stars', '4 stars']
+    rating = ['4 stars', '9 stars', '6 stars']
     data_cap = ['300GB', '100GB', '1000GB']
 
 class Subsession(BaseSubsession):
@@ -46,3 +46,4 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     choice = models.IntegerField()
+
