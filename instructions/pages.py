@@ -8,9 +8,6 @@ class Prolific(Page):
     form_model = 'player'
     form_fields = ['prolific_id']
 
-    def before_next_page(self):
-        self.participant.prolific_id = [self.player.prolific_id]
-
     def vars_for_template(self):
         return {'button_text': "Confirm"}
 
