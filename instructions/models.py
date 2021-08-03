@@ -80,10 +80,3 @@ class Player(BasePlayer):
         blank=False
     )
 
-def custom_export(players):
-    yield['session', 'participant_code', 'consent', 'comp_1', 'comp_2', 'comp_3']
-    for p in players:
-        yield (
-            p.session.code, p.participation.code, p.consent, p.comprehension_1, p.comprehension_2,
-            p.comprehension_3
-        )
