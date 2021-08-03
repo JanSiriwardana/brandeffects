@@ -26,7 +26,7 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         for p in self.get_players():
-            p.participant.prolific_id = self.prolific_id
+            p.participant.prolific_id = p.prolific_id
 
 
 class Group(BaseGroup):
