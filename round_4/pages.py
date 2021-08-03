@@ -14,6 +14,8 @@ class Instructions(Page):
 
 class Decision(Page):
     template_name = "round_4/Decision.html"
+    form_model = 'player'
+    form_fields = ['choice']
 
     def vars_for_template(self):
         beer_price = Constants.beer_price[self.round_number - 1]

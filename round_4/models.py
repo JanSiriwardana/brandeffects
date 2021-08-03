@@ -47,3 +47,10 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     choice = models.IntegerField()
 
+
+def custom_export(players):
+    yield['session', 'participant_code', 'round', 'choice']
+    for p in players:
+        yield (
+            p.session.code, p.participant.code, p.round_number, p.choice,
+        )
