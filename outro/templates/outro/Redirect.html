@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Redirecting...
+{% endblock %}
+
+{% block content %}
+
+    <script>
+        window.location.href = js_vars.redirect_url;
+    </script>
+
+{% endblock %}

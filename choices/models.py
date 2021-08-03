@@ -148,8 +148,8 @@ class MenuItemAttribute(ExtraModel):
 
 
 def custom_export(players):
-    yield['session', 'participant_code', 'round', 'brand', 'choice', 'itemA', 'itemB', 'itemC',
-           'itemD', 'required choice']
+    yield['session', 'participant_code', 'round', 'brand', 'choice', 'type', 'prod_number', 'attribute1', 'attribute2',
+          'attribute3', 'attribute4', 'required choice']
     for p in players:
         items = list(MenuItem.objects.filter(player=p))
         for item in items:
