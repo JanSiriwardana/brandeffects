@@ -170,9 +170,10 @@ class Player(BasePlayer):
         blank=False,
     )
 
+
 def custom_export(players):
     yield['session', 'participant_code', 'gender', 'age', 'state', 'ethnicity', 'income']
     for p in players:
-        yield(
+        yield (
             p.session.code, p.participant.code, p.gender, p.age, p.state, p.ethnicity, p.income
         )

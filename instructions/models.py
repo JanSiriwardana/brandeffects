@@ -85,7 +85,7 @@ def custom_export(players):
     yield['session', 'participant_code']
     for p in players:
         yield (
-            p.session.code, p.partipant.code
+            p.session.code, p.participant.code
         )
 
 
