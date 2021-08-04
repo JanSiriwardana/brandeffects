@@ -33,7 +33,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     instructions = models.IntegerField(
-        label="Where the instructions clear?",
+        label="Were the instructions clear?",
         choices=[
             [1, "Yes"],
             [2, "No"]
@@ -60,7 +60,7 @@ class Player(BasePlayer):
     )
 
     if_yes = models.LongStringField(
-        label="If you answered 'yes' to the previous question, please describes the issues you experienced",
+        label="If you answered 'yes' to the previous question, please describe the issues you experienced",
         blank=True,
     )
 
