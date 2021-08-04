@@ -5,6 +5,14 @@ class ThankYou(Page):
     pass
 
 
+class Feedback(Page):
+    form_model = 'player'
+    form_fields = ['instructions', 'if_no', 'browser', 'technical', 'if_yes', 'comments']
+
+    def vars_for_template(self):
+        return {'button_text': "Next"}
+
+
 class JanThankYou(Page):
     def vars_for_template(self):
         return {'button_text': "Return to Prolific"}
@@ -17,6 +25,7 @@ class Redirect(Page):
 
 page_sequence = [
     #ThankYou,
+    Feedback,
     JanThankYou,
     Redirect
 ]

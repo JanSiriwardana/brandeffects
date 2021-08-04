@@ -12,6 +12,11 @@ class Prolific(Page):
         return {'button_text': "Confirm"}
 
 
+class PilotIntro(Page):
+    def vars_for_template(self):
+        return{'button_text': "Begin survey"}
+
+
 class Introduction(Page):
     def vars_for_template(self):
         return {'button_text': "Next"}
@@ -32,6 +37,7 @@ class Comprehension(Page):
 
 page_sequence = [
     Prolific,
+    PilotIntro,
     Introduction,
     Consent,
     Comprehension,
