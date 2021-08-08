@@ -25,7 +25,7 @@ class Redirect(Page):
 
 page_sequence = [
     #ThankYou,
-    Feedback,
+    #Feedback,
     JanThankYou,
     Redirect
 ]

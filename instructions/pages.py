@@ -37,7 +37,7 @@ class Comprehension(Page):
 
 page_sequence = [
     Prolific,
-    PilotIntro,
+    #PilotIntro,
     Introduction,
     Consent,
     Comprehension,

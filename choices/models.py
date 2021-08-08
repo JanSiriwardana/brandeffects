@@ -68,7 +68,7 @@ class Subsession(BaseSubsession):
         if (self.round_number - 1) % Constants.num_rounds_per_product == 0:
             for product_type in Constants.brands.keys():
                 random.shuffle(Constants.brands[product_type])
-            print(Constants.brands)
+            
 
         products = {
             product_type: [
@@ -90,7 +90,6 @@ class Subsession(BaseSubsession):
             else:
                 player.brand = Constants.brands[product_type][(player.id_in_group * player.round_number +
                                                                player.id_in_group) % Constants.num_rounds_per_product]
-            print(player.brand)
             if player.round_number == 3:
                 player.required_choice = "B"
             elif player.round_number == 15:
