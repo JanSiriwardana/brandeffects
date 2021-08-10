@@ -68,7 +68,7 @@ class Subsession(BaseSubsession):
         if (self.round_number - 1) % Constants.num_rounds_per_product == 0:
             for product_type in Constants.brands.keys():
                 random.shuffle(Constants.brands[product_type])
-            
+
 
         products = {
             product_type: [
