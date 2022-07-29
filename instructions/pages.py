@@ -40,5 +40,5 @@ page_sequence = [
     #PilotIntro,
     Introduction,
     Consent,
-    Comprehension,
+    #Comprehension,
 ]
