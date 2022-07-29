@@ -42,7 +42,7 @@ class Decision(Page):
             'items': items,
             'attributes': {
                 attrib_name: [item.get_attribute(attrib_name).value for item in items]
-                for attrib_name in Constants.attributes[items[0].product_type]
+                for attrib_name in Constants.beers[0]
             }
         }
 
