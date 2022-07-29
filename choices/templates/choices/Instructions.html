@@ -6,17 +6,12 @@
 
 {% block pre_text %}
     <p>
-    The products in this round are all
-        {% for item in type %}
-            <span style="color: #ff0000">{{ item.product_type }}</span>.
-        {% endfor %}
+        The products in this round are all
+
     </p>
-    {% for item in type %}
-        {% if item.product_type == 'beers' %}
-            <p>
-                You will be shown sets of beer products from 8 brands of beers. Each brand is thinking of launching a new product
+            You will be shown sets of beer products from 8 brands of beers. Each brand is thinking of launching a new product
             and is considering 4 alternatives.
-            </p>
+    </p>
             <p>
                 Carefully consider the 4 alternatives and select the ONE you would most prefer.
             </p>
@@ -26,34 +21,7 @@
             <p>
                 When you are ready, click 'Next' to move to the first brand of beers.
             </p>
-        {% elif item.product_type == 'movies' %}
-            <p>
-                You will be shown sets of movies on 8 streaming platforms. Each platform is currently offering 4 alternatives.
-            <br>
-                Assume these are all movies you have not seen before.
-            </br>
-            </p>
-            <p>
-                Carefully consider the 4 alternatives and select the ONE you would most prefer.
-            </p>
-            <p>
-                When you are ready, click 'Next' to move to the first streaming platform.
-            </p>
-        {% else %}
-            <p>
-                You will be shown sets of broadband packages from 8 broadband service providers (ISPs). Each ISP is
-                thinking of launching a new package and is considering 4 alternatives.
-            </p>
-            <p>
-                Carefully consider the 4 alternatives and select the ONE you would most prefer.
-            </p>
-            <p>
-                Apart from the indicated characteristics, the 4 alternatives are exactly the same.
-            </p>
-            <p>
-                When you are ready, click 'Next' to move to the first ISP.
-            </p>
-        {% endif %}
-    {% endfor %}
+
+
 
 {% endblock pre_text %}

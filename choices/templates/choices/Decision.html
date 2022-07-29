@@ -6,80 +6,11 @@
 {% endblock %}
 
 {% block content %}
-    {% if player.required_choice is not None %}
-        <p>
-            Please choose <b>Product {{ player.required_choice }}</b>.
-        </p>
-    {% else %}
-        <p>
-            {% for item in type %}
-                {% if item.product_type == 'beers' %}
-                    {% if player.brand == 'Stella Artois' %}
-                        If&nbsp; <img src="https://i.imgur.com/8FFDwH6.png" width="100px" />&nbsp; launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Heineken' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/4frFvAD.png" width="100px" />&nbsp;&nbsp; launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Budweiser' %}
-                        If <img src="https://i.imgur.com/kXBLoTt.png" width="100px" /> launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Corona' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/wRReU79.png" width="100px" />&nbsp;&nbsp; launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Busch' %}
-                        If&nbsp; <img src="https://i.imgur.com/dYWjwb5.png" width="100px" />&nbsp; launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Coors' %}
-                        If&nbsp; <img src="https://i.imgur.com/NuloasW.png" width="100px" />&nbsp; launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Miller' %}
-                        If <img src="https://i.imgur.com/sw9xWX9.png" width="100px" /> launched a new beer, which would you prefer?
-                    {% elif player.brand == 'Modelo' %}
-                        If&nbsp;&nbsp;&nbsp; <img src="https://i.imgur.com/loxFQur.png" width="100px" />&nbsp;&nbsp;&nbsp; launched a new beer, which would you prefer?
-                    {% else %}
-                        If&nbsp; <img src="https://i.imgur.com/KsChuZC.png" width="100px" />&nbsp; launched a new beer, which would you prefer?
-                    {% endif %}
-                {% elif item.product_type == 'movies' %}
-                    {% if player.brand == 'Hulu' %}
-                        Which of these movies on <img src="https://i.imgur.com/A6hqTGp.png" width="100px" /> would you prefer?
-                    {% elif player.brand == 'HBOMax' %}
-                        Which of these movies on&nbsp;&nbsp; <img src="https://i.imgur.com/W7LtVA4.png" width="100px" />&nbsp;&nbsp; would you prefer?
-                    {% elif player.brand == 'AppleTV+' %}
-                        Which of these movies on <img src="https://i.imgur.com/ljpJlnB.png" width="100px" /> would you prefer?
-                    {% elif player.brand == 'Paramount+' %}
-                        Which of these movies on <img src="https://i.imgur.com/YGoZ6Mq.png" width="100px" /> would you prefer?
-                    {% elif player.brand == 'Youtube Premium' %}
-                        Which of these movies on <img src="https://i.imgur.com/jaK8DXg.png" width="200px" /> would you prefer?
-                    {% elif player.brand == 'Peacock' %}
-                        Which of these movies on&nbsp; <img src="https://i.imgur.com/pUmZllh.png" width="100px" />&nbsp; would you prefer?
-                    {% elif player.brand == 'Netflix' %}
-                        Which of these movies on&nbsp; <img src="https://i.imgur.com/qHb2bff.png" width="100px" />&nbsp; would you prefer?
-                    {% elif player.brand == 'Prime Video' %}
-                        Which of these movies on&nbsp; <img src="https://i.imgur.com/B4hWFjq.png" width="100px" />&nbsp; would you prefer?
-                    {% else %}
-                        Which of these movies on <img src="https://i.imgur.com/1ZLLV0y.png" width="100px" /> would you prefer?
-                    {% endif %}
-                {% else %}
-                    {% if player.brand == 'Frontier' %}
-                        If&nbsp; <img src="https://i.imgur.com/fCGVljo.png" width="100px" />&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'Verizon' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/W8GLPms.png" width="100px" />&nbsp;&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'Altice' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/FggJKQA.png" width="50px" />&nbsp;&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'Mediacom' %}
-                        If <img src="https://i.imgur.com/AnLdYqU.png" width="100px" /> launched a new package, which would you prefer?
-                    {% elif player.brand == 'CharterSpectrum' %}
-                        If&nbsp; <img src="https://i.imgur.com/GfmFY7B.png" width="100px" />&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'CenturyLink' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/CgaqUBH.png" width="100px" />&nbsp;&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'AT&T' %}
-                        If&nbsp;&nbsp; <img src="https://i.imgur.com/rVpRVFR.png" width="100px" />&nbsp;&nbsp; launched a new package, which would you prefer?
-                    {% elif player.brand == 'Cox' %}
-                        If <img src="https://i.imgur.com/KCgcF6S.png" width="100px" /> launched a new package, which would you prefer?
-                    {% else %}
-                        If&nbsp; <img src="https://i.imgur.com/rE0nPSq.png" width="100px" /> launched a new package, which would you prefer?
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-        </p>
-    {% endif %}
+
     <table style="font-weight: bold", class="table table-striped table-bordered">
     <thead>
     <tr style="background-color: dodgerblue; color: white">
+
     <th>Product name</th>
     {% for item in items %}
         <th style="text-align:center">{{ item.product_name }}</th>
@@ -87,11 +18,141 @@
     </tr>
     </thead>
     <tbody>
+     <tr style="display:none">
+     </tr>
     {% for attribute, values in attributes.items %}
     <tr>
-    <td style="font-weight: bold">{{ attribute }}</td>
+    <td style="font-weight: bold; vertical-align: middle">{{ attribute }}</td>
     {% for val in values %}
-        <td style="text-align:center">{{ val }}</td>
+        {% if val == 'Bud Light' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/uNIUJeb.jpg" width="150px" />
+                <p>
+                    <br>
+                    Bud Light
+                </p>
+            </td>
+        {% elif val == 'Coors Light' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/H9v50li.png" width="150px" />
+                <p>
+                    <br>
+                    Coors Light
+                </p>
+            </td>
+        {% elif val == 'Miller Lite' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/Mv3kaZi.jpg" width="150px" />
+                <p>
+                    <br>
+                    Miller Lite
+                </p>
+            </td>
+        {% elif val == 'Budweiser' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/pin2FDe.jpg" width="175px" />
+                <p>
+                    <br>
+                    Budweiser
+                </p>
+            </td>
+        {% elif val == 'Michelob Ultra' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/3cB4auT.jpg" width="150px" />
+                <p>
+                    <br>
+                    Michelob Ultra
+                </p>
+            </td>
+        {% elif val == 'Corona Extra' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/RrLZV33.png" width="150px" />
+                <p>
+                    <br>
+                    Corona Extra
+                </p>
+            </td>
+        {% elif val == 'Modelo Especial' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/IZet5zZ.jpg" width="150px" />
+                <p>
+                    <br>
+                    Modelo Especial
+                </p>
+            </td>
+        {% elif val == 'Natural Light' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/gnB1hwn.jpg" width="150px" />
+                <p>
+                    <br>
+                    Natural Light
+                </p>
+            </td>
+        {% elif val == 'Busch Light' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/eCaZQCh.jpg" width="150px" />
+                <p>
+                    <br>
+                    Busch Light
+                </p>
+            </td>
+        {% elif val == 'Busch' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/nUw9jOj.jpg" width="150px" />
+                <p>
+                    <br>
+                    Busch
+                </p>
+            </td>
+        {% elif val == 'Heineken' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/ONb7fxq.jpg" width="150px" />
+                <p>
+                    <br>
+                    Heineken
+                </p>
+            </td>
+        {% elif val == 'Keystone Light' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/utXG5fW.jpg" width="150px" />
+                <p>
+                    <br>
+                    Keystone Light
+                </p>
+            </td>
+        {% elif val == 'Miller High Life' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/XUGypJf.jpg" width="150px" />
+                <p>
+                    <br>
+                    Miller High Life
+                </p>
+            </td>
+        {% elif val == 'Stella Artois' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/X4k38IA.png" width="190px" />
+                <p>
+                    <br>
+                    Stella Artois
+                </p>
+            </td>
+        {% elif val == 'Pabst Blue Ribbon' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/ziMmFI9.jpg" width="150px" />
+                <p>
+                    <br>
+                    Pabst Blue Ribbon
+                </p>
+            </td>
+        {% elif val == 'Blue Moon' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/PNOuYcr.jpg" width="150px" />
+                <p>
+                    <br>
+                    Blue Moon
+                </p>
+            </td>
+        {% elif val == 'Dos Equis' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/Wo2gfip.jpg" width="150px" />
+                <p>
+                    <br>
+                    Dos Equis
+                </p>
+            </td>
+        {% elif val == 'Coors Banquet' %}
+            <td style="text-align:center"> <img src="https://i.imgur.com/M2AgKWT.png" width="150px" />
+                <p>
+                    <br>
+                    Coors Banquet
+                </p>
+            </td>
+        {% else %}
+            <td style="text-align:center">{{ val }}</td>
+        {% endif %}
     {% endfor %}
     </tr>
     {% endfor %}

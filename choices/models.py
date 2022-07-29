@@ -26,24 +26,24 @@ class Constants(BaseConstants):
     name_in_url = 'Choices'
     players_per_group = None
 
-    beers = [{'Brand': 'Bud Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume': '16-oz'},
-             {'Brand': 'Coors Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Miller Lite', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Budweiser', 'ABV': '5.0%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Michelob Ultra', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume': '16-oz'},
-             {'Brand': 'Corona Extra', 'ABV': '4.5%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Modelo Especial', 'ABV': '4.5%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Natural Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Busch Light', 'ABV': '4.5%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Busch', 'ABV': '4.3%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Heineken', 'ABV': '5.0%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Keystone Light', 'ABV': '4.1%', 'Container': 'Bottle', 'Volume': '15-oz'},
-             {'Brand': 'Miller High Life', 'ABV': '4.6%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Stella Artois', 'ABV': '4.8%', 'Container': 'Bottle', 'Volume': '11.2-oz'},
-             {'Brand': 'Pabst Blue Ribbon', 'ABV': '4.7%', 'Container': 'Can', 'Volume': '12-oz'},
-             {'Brand': 'Blue Moon', 'ABV': '5.2%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Dos Equis', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume': '12-oz'},
-             {'Brand': 'Coors Banquet', 'ABV': '5.0%', 'Container': 'Can', 'Volume': '12-oz'}]
+    beers = [{'Brand': 'Bud Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume/unit': '16-oz'},
+             {'Brand': 'Coors Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Miller Lite', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Budweiser', 'ABV': '5.0%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Michelob Ultra', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume/unit': '16-oz'},
+             {'Brand': 'Corona Extra', 'ABV': '4.5%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Modelo Especial', 'ABV': '4.5%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Natural Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Busch Light', 'ABV': '4.5%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Busch', 'ABV': '4.3%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Heineken', 'ABV': '5.0%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Keystone Light', 'ABV': '4.1%', 'Container': 'Bottle', 'Volume/unit': '15-oz'},
+             {'Brand': 'Miller High Life', 'ABV': '4.6%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Stella Artois', 'ABV': '4.8%', 'Container': 'Bottle', 'Volume/unit': '11.2-oz'},
+             {'Brand': 'Pabst Blue Ribbon', 'ABV': '4.7%', 'Container': 'Can', 'Volume/unit': '12-oz'},
+             {'Brand': 'Blue Moon', 'ABV': '5.2%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Dos Equis', 'ABV': '4.2%', 'Container': 'Bottle', 'Volume/unit': '12-oz'},
+             {'Brand': 'Coors Banquet', 'ABV': '5.0%', 'Container': 'Can', 'Volume/unit': '12-oz'}]
 
     prices = ['$6.49', '$7.99', '$10.99']
 
@@ -68,7 +68,7 @@ class Subsession(BaseSubsession):
 
             menu = random.sample(products, Constants.num_items)
             for item in menu:
-                item['Price'] = random.choice(Constants.prices)
+                item['Price/6-pack'] = random.choice(Constants.prices)
             for (alt_name, alt) in zip(Constants.options, menu):
                 index = menu.index(alt)
                 item = MenuItem(player=player,
