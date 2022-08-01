@@ -9,7 +9,7 @@ SESSION_CONFIGS = [
             #'intro',
             'instructions',
             #'practice',
-            'chices',
+            'choices',
             #'round_4',
             #'demographics',
             'outro'
