@@ -29,7 +29,6 @@ class Consent(Page):
     def vars_for_template(self):
         return {'button_text': "Confirm"}
 
-
 class Comprehension(Page):
     form_model = 'player'
     form_fields = ['comprehension_1', 'comprehension_2', 'comprehension_3']

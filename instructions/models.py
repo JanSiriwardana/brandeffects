@@ -38,10 +38,9 @@ class Player(BasePlayer):
     )
 
     consent = models.IntegerField(
-        label="Please select your choice below",
+        label="",
         choices=[
-            [1, "Agree"],
-            [2, "Disagree"],
+            [1, "I agree to the terms and conditions set out above"],
             ],
         widget=widgets.RadioSelect,
         blank=False,
