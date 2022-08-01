@@ -23,7 +23,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'Choices'
+    name_in_url = 'Practice'
     players_per_group = None
 
     beers = [{'Brand': 'Bud Light', 'ABV': '4.2%', 'Container': 'Can', 'Volume/unit': '16-oz'},
@@ -47,9 +47,11 @@ class Constants(BaseConstants):
 
     prices = ['$6.49', '$7.99', '$10.99']
 
+    characteristics = ["Brand", "ABV", "Container", "Volume/unit", "Price"]
+
     options = ['A', 'B', 'C', 'D']
 
-    num_rounds_per_product = 10
+    num_rounds_per_product = 2
     num_rounds = num_rounds_per_product
     num_items = 4
 

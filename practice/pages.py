@@ -4,8 +4,8 @@ from .models import Constants, MenuItem
 import math
 
 
-class Instructions(Page):
-    template_name = "choices/Instructions.html"
+class PracticeInstructions(Page):
+    template_name = "practice/PracticeInstructions.html"
 
     def vars_for_template(self):
         round_number = int(math.ceil(self.round_number / Constants.num_rounds_per_product))
@@ -43,6 +43,6 @@ class Results(Page):
 
 
 page_sequence = [
-    Instructions,
+    PracticeInstructions,
     Decision
 ]
