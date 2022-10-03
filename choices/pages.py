@@ -24,7 +24,7 @@ class Decision(Page):
     form_fields = ['choice']
 
     def vars_for_template(self):
-        choice_set = self.round_number % Constants.num_rounds_per_product
+        choice_set = self.round_number
         type = [list(MenuItem.objects.filter(player=self.player))[0]]
         items = list(MenuItem.objects.filter(player=self.player))
         return {
