@@ -21,7 +21,7 @@ class JanThankYou(Page):
 class Redirect(Page):
     @staticmethod
     def js_vars():
-        return dict(redirect_url='https://app.prolific.co/submissions/complete?cc=35A44904')
+        return dict(redirect_url='https://app.prolific.co/submissions/complete?cc=C1AMB8Y8')
 
 page_sequence = [
     #ThankYou,
