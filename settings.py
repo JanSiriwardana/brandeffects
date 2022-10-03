@@ -11,7 +11,7 @@ SESSION_CONFIGS = [
             #'practice',
             'choices',
             #'round_4',
-            #'demographics',
+            'demographics',
             'outro'
         ]
     ),

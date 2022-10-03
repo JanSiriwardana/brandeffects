@@ -109,7 +109,7 @@ class Player(BasePlayer):
     )
 
     income = models.IntegerField(
-        label="What is your net monthly income in dollars?",
+        label="What is your net monthly income in dollars? Please include any loans, stipends or allowances you receive",
         blank=False,
     )
 
